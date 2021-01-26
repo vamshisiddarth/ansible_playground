@@ -30,7 +30,8 @@ theme:
 
 nav:
   - Home: 'index.md'
-  - 'Quick Start': 'Quick-Start.md'
+  - 'Quick Start Guide': 'Quick-Start.md'
+  - 'Destroy Resources': 'demolition.md'
 
 google_analytics:
   - G-YQJ1M18N29

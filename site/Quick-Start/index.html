@@ -20,7 +20,7 @@
     
     
       
-        <title>Quick Start - Ansible Playground</title>
+        <title>Quick Start Guide - Ansible Playground</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#steps-to-follow" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              Quick Start Guide
             
           </span>
         </div>
@@ -225,12 +225,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Quick Start
+        Quick Start Guide
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Quick Start
+      Quick Start Guide
     </a>
     
       
@@ -245,16 +245,92 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick Start
+  <a href="#steps-to-follow" class="md-nav__link">
+    Steps to follow
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to follow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-your-local-machine" class="md-nav__link">
+    Prepare your local machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#demolition" class="md-nav__link">
-    Demolition
+        
+          <li class="md-nav__item">
+  <a href="#install-aws-plugin" class="md-nav__link">
+    Install AWS Plugin
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ansible-vault" class="md-nav__link">
+    Configure Ansible Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-aws-credentials" class="md-nav__link">
+    Configure AWS Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-inventory-file" class="md-nav__link">
+    Generate Inventory File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-the-key-file" class="md-nav__link">
+    Generate the Key File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-free-domain" class="md-nav__link">
+    Create A Free Domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-terraform-files" class="md-nav__link">
+    Update Terraform files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-aws-resources-using-terraform" class="md-nav__link">
+    Create AWS Resources using Terraform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-dns-resolution" class="md-nav__link">
+    Verify DNS Resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-ssh-connection" class="md-nav__link">
+    Confirm SSH Connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -262,6 +338,19 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../demolition/" class="md-nav__link">
+      Destroy Resources
+    </a>
   </li>
 
     
@@ -288,16 +377,92 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick Start
+  <a href="#steps-to-follow" class="md-nav__link">
+    Steps to follow
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to follow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-your-local-machine" class="md-nav__link">
+    Prepare your local machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#demolition" class="md-nav__link">
-    Demolition
+        
+          <li class="md-nav__item">
+  <a href="#install-aws-plugin" class="md-nav__link">
+    Install AWS Plugin
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ansible-vault" class="md-nav__link">
+    Configure Ansible Vault
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-aws-credentials" class="md-nav__link">
+    Configure AWS Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-inventory-file" class="md-nav__link">
+    Generate Inventory File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-the-key-file" class="md-nav__link">
+    Generate the Key File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-free-domain" class="md-nav__link">
+    Create A Free Domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-terraform-files" class="md-nav__link">
+    Update Terraform files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-aws-resources-using-terraform" class="md-nav__link">
+    Create AWS Resources using Terraform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-dns-resolution" class="md-nav__link">
+    Verify DNS Resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-ssh-connection" class="md-nav__link">
+    Confirm SSH Connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -318,26 +483,25 @@
                   </a>
                 
                 
-                  <h1>Quick Start</h1>
+                  <h1>Quick Start Guide</h1>
                 
-                <h3 id="quick-start">Quick Start</h3>
-<ul>
-<li>Clone the repository on your machine.</li>
-<li>Use any IDE of your choice. I'm using <code>Jet Brains Intellij</code>. Navigate to the repository on the terminal and execute the below.</li>
-</ul>
-<pre><code>./pip-install.sh
+                <h2 id="steps-to-follow">Steps to follow</h2>
+<h3 id="prepare-your-local-machine">Prepare your local machine</h3>
+<p>Clone the repository on your machine. Use any IDE of your choice. I'm using <code>Jet Brains Intellij</code>. Navigate to the repository on the terminal and execute the below.</p>
+<pre><code class="language-sh">./pip-install.sh
 </code></pre>
-<ul>
-<li>Install the amazon aws plugin using below.</li>
-</ul>
-<pre><code>$ ansible-galaxy collection install amazon.aws
+<h3 id="install-aws-plugin">Install AWS Plugin</h3>
+<p>Install the amazon aws plugin using below.</p>
+<pre><code class="language-sh">$ ansible-galaxy collection install amazon.aws
 </code></pre>
-<ul>
-<li>Create <code>vault-password.txt</code> file with your vault password. Check <code>vault-password.example.txt</code> file for reference. The <code>vault.sh</code> script can be used to encrypt and decrypt your group_vars file. This will be explained later.</li>
-<li>Create <code>credentials.txt</code> file with your aws access key and secret key. You may also choose the region of your choice. Check <code>credentials.example.txt</code> file for reference.</li>
-<li>Generate the Inventory File for your environment using below.</li>
-</ul>
-<pre><code>$ ./gen-inventory-yaml.sh 
+<h3 id="configure-ansible-vault">Configure Ansible Vault</h3>
+<p>Create <code>vault-password.txt</code> file with your vault password. Check <code>vault-password.example.txt</code> file for reference. The <code>vault.sh</code> script can be used to encrypt and decrypt your group_vars file. This will be explained later.</p>
+<h3 id="configure-aws-credentials">Configure AWS Credentials</h3>
+<p>Create <code>credentials.txt</code> file with your aws access key and secret key. You may also choose the region of your choice. Check <code>credentials.example.txt</code> file for reference.</p>
+<h3 id="generate-inventory-file">Generate Inventory File</h3>
+<p>Generate the Inventory File for your environment using below.</p>
+<pre><code class="language-sh">$ ./gen-inventory-yaml.sh
+
 Welcome!! You will now be able to generate the credential file for your new environment/account. Please provide the below requested details
 environment: stage
 aws_access_key_id: AKIARMAHSDVFVEFCDCD                 
@@ -345,10 +509,10 @@ aws_secret_access_key: JSADSDdsdmcdc3453422/34e324e3dsacaDFG
 iam_role_arn: arn:aws:iam::0912345553223:role/Administrator                                                   
 Inventory Credential File created successfully!!
 </code></pre>
-<ul>
-<li>Generate the key files which will be used for authentication into the new servers we create.</li>
-</ul>
-<pre><code>$ ./gen-key.sh
+<h3 id="generate-the-key-file">Generate the Key File</h3>
+<p>Generate the key files which will be used for authentication into the new servers we create.</p>
+<pre><code class="language-sh">$ ./gen-key.sh
+
 Welcome!! You will now be able to generate the key files for your new environment/account. Please provide the below requested details
 environment: dev
 Generating public/private rsa key pair.
@@ -370,11 +534,11 @@ The key's randomart image is:
 +----[SHA256]-----+
 Key File created successfully!!
 </code></pre>
-<ul>
-<li>Create a Free Domain for yourself. I have created <code>vamshi.cf</code> using <a href="https://www.freenom.com/en/index.html?lang=en">Freenom</a>. We will then create a hosted zone in our AWS account and we need to update the nameservers in freenom with AWS nameservers.</li>
-<li>Navigate to the <code>terraform</code> directory and update the <code>vars.tf</code> and <code>key-file.tf</code> with suitable values.</li>
-</ul>
-<pre><code class="language-bash"># key-file.tf
+<h3 id="create-a-free-domain">Create A Free Domain</h3>
+<p>Create a Free Domain for yourself. I have created <code>vamshi.cf</code> using <a href="https://www.freenom.com/en/index.html?lang=en">Freenom</a>. We will then create a hosted zone in our AWS account and we need to update the nameservers in freenom with AWS nameservers.</p>
+<h3 id="update-terraform-files">Update Terraform files</h3>
+<p>Navigate to the <code>terraform</code> directory and update the <code>vars.tf</code> and <code>key-file.tf</code> with suitable values.</p>
+<pre><code class="language-tf"># key-file.tf
 
 resource &quot;aws_key_pair&quot; &quot;dev-key&quot; {
   key_name   = var.key_name
@@ -387,10 +551,10 @@ variable &quot;domain_name&quot; {
   default = &quot;vamshi.cf&quot; # Update with your domain name
 }
 </code></pre>
-<ul>
-<li>Once these files are updated, execute the below to create the new resources in aws.</li>
-</ul>
+<h3 id="create-aws-resources-using-terraform">Create AWS Resources using Terraform</h3>
+<p>Once these files are updated, execute the below to create the new resources in aws.</p>
 <pre><code>$ ./run.sh apply -auto-approve
+
 aws_route53_zone.public-zone: Creating...
 module.vpc_dev.aws_vpc_dhcp_options.this[0]: Creating...
 aws_key_pair.dev-key: Creating...
@@ -506,8 +670,10 @@ dev-ec2-bastion-public_dns = [
 ]
 dev-ec2-bastion-public_ip = &quot;54.220.236.92&quot;
 </code></pre>
+<h3 id="verify-dns-resolution">Verify DNS Resolution</h3>
 <p>Once this is done, we need to update the nameservers for the domain. It might take a little time for the domain name to resolve. Once it is successful, you might find similar output.</p>
-<pre><code>$ nslookup bastion.vamshi.cf
+<pre><code class="language-sh">$ nslookup bastion.vamshi.cf
+
 Server:         192.168.0.1
 Address:        192.168.0.1#53
 
@@ -515,8 +681,9 @@ Non-authoritative answer:
 Name:   bastion.vamshi.cf
 Address: 54.220.236.92
 </code></pre>
+<h3 id="confirm-ssh-connection">Confirm SSH Connection</h3>
 <p>You can now ssh into the newly created instance using the below command.</p>
-<pre><code>$ ssh -F &quot;./ssh/web.ssh.config&quot; ubuntu@172.16.10.120
+<pre><code class="language-sh">$ ssh -F &quot;./ssh/web.ssh.config&quot; ubuntu@172.16.10.120
 
  * Documentation:  https://help.ubuntu.com
  * Management:     https://landscape.canonical.com
@@ -540,125 +707,6 @@ See &quot;man sudo_root&quot; for details.
 ubuntu@ip-172-16-10-120:~$ 
 </code></pre>
 <p>With this, you have now completed the Dynamic Inventory configuration. </p>
-<h3 id="demolition">Demolition</h3>
-<ul>
-<li>Execute the below to destroy the newly created resources in aws once you are done using this to avoid unnecessary billing.</li>
-</ul>
-<pre><code>$ ./run.sh destroy -auto-approve
-module.vpc_dev.aws_route_table_association.database[1]: Destroying... [id=rtbassoc-0c5222a1c212e3e36]
-module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-884063906]
-module.vpc_dev.aws_route_table_association.private[0]: Destroying... [id=rtbassoc-044c20b437a042193]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Destroying... [id=sgrule-1033354731]
-module.vpc_dev.aws_route.private_ipv6_egress[1]: Destroying... [id=r-rtb-0509095b1c1e835172750132062]
-module.vpc_dev.aws_route_table_association.database[0]: Destroying... [id=rtbassoc-0840e6850bfa5b2f5]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-2872495831]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Destroying... [id=sgrule-3486056792]
-module.vpc_dev.aws_route.private_ipv6_egress[2]: Destroying... [id=r-rtb-00c52f0ed2854ab622750132062]
-module.vpc_dev.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-08dc97e9b829f36bb1080289494]
-module.vpc_dev.aws_route.private_ipv6_egress[2]: Destruction complete after 1s
-module.vpc_dev.aws_route.private_ipv6_egress[1]: Destruction complete after 1s
-module.vpc_dev.aws_route.public_internet_gateway[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.database[2]: Destroying... [id=rtbassoc-058005031dfb9c044]
-module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Destroying... [id=dopt-0303c1dec0b9fc27e-vpc-03be23a10646bd9a5]
-module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-1980634278]
-module.vpc_dev.aws_route_table_association.database[1]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.database[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.private[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-0e096122f2effdabb]
-module.vpc_dev.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0e16b00b1d5f05c0c]
-module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-2351752626]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Destruction complete after 2s
-module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Destruction complete after 2s
-module.vpc_dev.aws_route.private_ipv6_egress[0]: Destroying... [id=r-rtb-05ffec8966cbaffcd2750132062]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Destroying... [id=sgrule-344356267]
-module.vpc_dev.aws_route_table_association.database[2]: Destruction complete after 1s
-module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Destruction complete after 1s
-module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-4024825567]
-aws_route53_record.dev-bastion-a-record: Destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A]
-module.vpc_dev.aws_route_table_association.public[1]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.public[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.private[2]: Destroying... [id=rtbassoc-0bc613f3ddfe284b2]
-module.vpc_dev.aws_route_table_association.private[1]: Destroying... [id=rtbassoc-01f741f5613611a0d]
-module.vpc_dev.aws_route.private_ipv6_egress[0]: Destruction complete after 0s
-module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Destroying... [id=r-rtb-08dc97e9b829f36bb2750132062]
-module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table_association.public[2]: Destroying... [id=rtbassoc-0bc318107da626a01]
-module.vpc_dev.aws_route_table_association.private[2]: Destruction complete after 1s
-module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-3869248690]
-module.vpc_dev.aws_route_table_association.private[1]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.database[0]: Destroying... [id=subnet-0569b2aea636b0ecb]
-module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.database[1]: Destroying... [id=subnet-059b142cde11c2251]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Destruction complete after 3s
-module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Destruction complete after 1s
-module.vpc_dev.aws_vpc_dhcp_options.this[0]: Destroying... [id=dopt-0303c1dec0b9fc27e]
-module.vpc_dev.aws_subnet.database[2]: Destroying... [id=subnet-09146b82c1a953a92]
-module.vpc_dev.aws_route_table_association.public[2]: Destruction complete after 1s
-module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Destroying... [id=eigw-009b7427372ed44de]
-module.vpc_dev.aws_vpc_dhcp_options.this[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table.private[2]: Destroying... [id=rtb-00c52f0ed2854ab62]
-module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table.private[1]: Destroying... [id=rtb-0509095b1c1e83517]
-module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.database[0]: Destruction complete after 1s
-module.vpc_dev.aws_route_table.private[0]: Destroying... [id=rtb-05ffec8966cbaffcd]
-module.vpc_dev.aws_subnet.private[2]: Destroying... [id=subnet-00e373355ba1602bf]
-module.vpc_dev.aws_subnet.database[1]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.private[0]: Destroying... [id=subnet-0c3dca01bcb570f97]
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Destruction complete after 5s
-module.vpc_dev.aws_subnet.private[1]: Destroying... [id=subnet-037fb36ae0b8c38a3]
-module.vpc_dev.aws_subnet.database[2]: Destruction complete after 2s
-module.vpc_dev.aws_internet_gateway.this[0]: Destroying... [id=igw-0954a9c4fc0843f79]
-module.vpc_dev.aws_subnet.private[2]: Destruction complete after 2s
-module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-086c2f084978456f3]
-module.vpc_dev.aws_route_table.private[2]: Destruction complete after 2s
-module.vpc_dev.aws_route_table.public[0]: Destroying... [id=rtb-08dc97e9b829f36bb]
-module.vpc_dev.aws_route_table.private[1]: Destruction complete after 2s
-module.vpc_dev.aws_subnet.private[0]: Destruction complete after 2s
-module.vpc_dev.aws_route_table.private[0]: Destruction complete after 2s
-module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Destruction complete after 5s
-module.vpc_dev.aws_subnet.private[1]: Destruction complete after 1s
-module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
-module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Destruction complete after 6s
-module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-01ec22237965acd7f]
-module.vpc_dev.aws_route_table.public[0]: Destruction complete after 2s
-module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
-aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 10s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 10s elapsed]
-aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 20s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 20s elapsed]
-aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 30s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 30s elapsed]
-aws_route53_record.dev-bastion-a-record: Destruction complete after 34s
-aws_route53_zone.public-zone: Destroying... [id=Z0974811ANA23TP83HGF]
-aws_eip.dev-ec2-bastion-eip: Destroying... [id=eipalloc-0318ebd03092702a2]
-aws_route53_zone.public-zone: Destruction complete after 1s
-aws_eip.dev-ec2-bastion-eip: Destruction complete after 3s
-module.dev-ec2-bastion.aws_instance.this[0]: Destroying... [id=i-0baccb445ce016d7f]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 40s elapsed]
-module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 10s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 50s elapsed]
-module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 20s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 1m0s elapsed]
-module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 30s elapsed]
-module.vpc_dev.aws_internet_gateway.this[0]: Destruction complete after 1m6s
-module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 40s elapsed]
-module.dev-ec2-bastion.aws_instance.this[0]: Destruction complete after 44s
-aws_key_pair.dev-key: Destroying... [id=dev-env-key]
-module.vpc_dev.aws_subnet.public[1]: Destroying... [id=subnet-02ffb013966242f48]
-module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-0e67371b370328f5b]
-module.vpc_dev.aws_subnet.public[0]: Destroying... [id=subnet-04b55e5c937515898]
-module.vpc_dev.aws_subnet.public[2]: Destroying... [id=subnet-0a2d44621af2d045d]
-aws_key_pair.dev-key: Destruction complete after 0s
-module.vpc_dev.aws_subnet.public[2]: Destruction complete after 1s
-module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.public[1]: Destruction complete after 1s
-module.vpc_dev.aws_subnet.public[0]: Destruction complete after 1s
-module.vpc_dev.aws_vpc.this[0]: Destroying... [id=vpc-03be23a10646bd9a5]
-module.vpc_dev.aws_vpc.this[0]: Destruction complete after 1s
-
-Destroy complete! Resources: 49 destroyed.
-</code></pre>
                 
               
               
@@ -691,6 +739,20 @@ Destroy complete! Resources: 49 destroyed.
             </div>
           </a>
         
+        
+          <a href="../demolition/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Destroy Resources
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

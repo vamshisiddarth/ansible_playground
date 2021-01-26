@@ -1,0 +1,12 @@
+# Global Variables open to expose in the repository
+user: ubuntu
+zsh_theme: steeef
+
+is_debian: "{{ ansible_os_family | lower == 'debian' }}"
+is_redhat: "{{ ansible_os_family | lower == 'redhat' }}"
+
+env: "{{ hostvars[inventory_hostname].tags.environment }}"
+idx: "{{ hostvars[inventory_hostname].tags.Name.split('-') | last | int | default(0) }}"
+ecname: "{{ hostvars[inventory_hostname].tags.name }}"
+ecnameidx: "{{ '-'.join((ecname, idx)) }}"
+

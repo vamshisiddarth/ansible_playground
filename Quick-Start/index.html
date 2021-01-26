@@ -1,0 +1,733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn your way into the Ansible Playbooks and roles">
+      
+      
+      
+        <meta name="author" content="Vamshi Siddarth Gaddam">
+      
+      
+        <link rel="canonical" href="https://vamshisiddarth.github.io/ansible_playground/Quick-Start/">
+      
+      <link rel="shortcut icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+    
+    
+      
+        <title>Quick Start - Ansible Playground</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-YQJ1M18N29","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://vamshisiddarth.github.io/ansible_playground" title="Ansible Playground" class="md-header-nav__button md-logo" aria-label="Ansible Playground">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Ansible Playground
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Quick Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/vamshisiddarth/ansible_playground/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vamshisiddarth/ansible_playground
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://vamshisiddarth.github.io/ansible_playground" title="Ansible Playground" class="md-nav__button md-logo" aria-label="Ansible Playground">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Ansible Playground
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/vamshisiddarth/ansible_playground/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vamshisiddarth/ansible_playground
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Quick Start
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Quick Start
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demolition" class="md-nav__link">
+    Demolition
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick Start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demolition" class="md-nav__link">
+    Demolition
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/vamshisiddarth/ansible_playground/edit/master/docs/Quick-Start.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Quick Start</h1>
+                
+                <h3 id="quick-start">Quick Start</h3>
+<ul>
+<li>Clone the repository on your machine.</li>
+<li>Use any IDE of your choice. I'm using <code>Jet Brains Intellij</code>. Navigate to the repository on the terminal and execute the below.</li>
+</ul>
+<pre><code>./pip-install.sh
+</code></pre>
+<ul>
+<li>Install the amazon aws plugin using below.</li>
+</ul>
+<pre><code>$ ansible-galaxy collection install amazon.aws
+</code></pre>
+<ul>
+<li>Create <code>vault-password.txt</code> file with your vault password. Check <code>vault-password.example.txt</code> file for reference. The <code>vault.sh</code> script can be used to encrypt and decrypt your group_vars file. This will be explained later.</li>
+<li>Create <code>credentials.txt</code> file with your aws access key and secret key. You may also choose the region of your choice. Check <code>credentials.example.txt</code> file for reference.</li>
+<li>Generate the Inventory File for your environment using below.</li>
+</ul>
+<pre><code>$ ./gen-inventory-yaml.sh 
+Welcome!! You will now be able to generate the credential file for your new environment/account. Please provide the below requested details
+environment: stage
+aws_access_key_id: AKIARMAHSDVFVEFCDCD                 
+aws_secret_access_key: JSADSDdsdmcdc3453422/34e324e3dsacaDFG
+iam_role_arn: arn:aws:iam::0912345553223:role/Administrator                                                   
+Inventory Credential File created successfully!!
+</code></pre>
+<ul>
+<li>Generate the key files which will be used for authentication into the new servers we create.</li>
+</ul>
+<pre><code>$ ./gen-key.sh
+Welcome!! You will now be able to generate the key files for your new environment/account. Please provide the below requested details
+environment: dev
+Generating public/private rsa key pair.
+Your identification has been saved in _ssh/dev-env-key.pem.
+Your public key has been saved in _ssh/dev-env-key.pem.pub.
+The key fingerprint is:
+SHA256:eDfWwhh/wLhviuyj6SZ0OaVLu3AdrWioiQkPJOO/TlA vamshisiddarthgaddam@Vamshis-MBP-2
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|         o       |
+|   E    o o      |
+|  .   .o * o     |
+|oo   +o S B o    |
+|+.o.*o + + +     |
+|ooo+++o   o      |
+|o*+++o.. o       |
+|= oB*++..        |
++----[SHA256]-----+
+Key File created successfully!!
+</code></pre>
+<ul>
+<li>Create a Free Domain for yourself. I have created <code>vamshi.cf</code> using <a href="https://www.freenom.com/en/index.html?lang=en">Freenom</a>. We will then create a hosted zone in our AWS account and we need to update the nameservers in freenom with AWS nameservers.</li>
+<li>Navigate to the <code>terraform</code> directory and update the <code>vars.tf</code> and <code>key-file.tf</code> with suitable values.</li>
+</ul>
+<pre><code class="language-bash"># key-file.tf
+
+resource &quot;aws_key_pair&quot; &quot;dev-key&quot; {
+  key_name   = var.key_name
+  public_key = file(&quot;./../_ssh/dev-env-key.pem.pub&quot;) # This should be your environment key file name
+}
+
+# vars.tf
+
+variable &quot;domain_name&quot; {
+  default = &quot;vamshi.cf&quot; # Update with your domain name
+}
+</code></pre>
+<ul>
+<li>Once these files are updated, execute the below to create the new resources in aws.</li>
+</ul>
+<pre><code>$ ./run.sh apply -auto-approve
+aws_route53_zone.public-zone: Creating...
+module.vpc_dev.aws_vpc_dhcp_options.this[0]: Creating...
+aws_key_pair.dev-key: Creating...
+module.vpc_dev.aws_vpc.this[0]: Creating...
+aws_key_pair.dev-key: Creation complete after 1s [id=dev-env-key]
+module.vpc_dev.aws_vpc_dhcp_options.this[0]: Creation complete after 3s [id=dopt-0303c1dec0b9fc27e]
+module.vpc_dev.aws_vpc.this[0]: Creation complete after 10s [id=vpc-03be23a10646bd9a5]
+module.vpc_dev.aws_internet_gateway.this[0]: Creating...
+module.vpc_dev.aws_route_table.private[1]: Creating...
+module.vpc_dev.aws_route_table.public[0]: Creating...
+module.vpc_dev.aws_route_table.private[2]: Creating...
+module.vpc_dev.aws_route_table.private[0]: Creating...
+module.vpc_dev.aws_subnet.private[1]: Creating...
+module.vpc_dev.aws_subnet.database[0]: Creating...
+module.vpc_dev.aws_subnet.database[1]: Creating...
+module.vpc_dev.aws_subnet.private[0]: Creating...
+aws_route53_zone.public-zone: Still creating... [10s elapsed]
+module.vpc_dev.aws_route_table.private[0]: Creation complete after 2s [id=rtb-05ffec8966cbaffcd]
+module.vpc_dev.aws_route_table.private[1]: Creation complete after 2s [id=rtb-0509095b1c1e83517]
+module.vpc_dev.aws_subnet.public[2]: Creating...
+module.vpc_dev.aws_subnet.private[2]: Creating...
+module.vpc_dev.aws_route_table.public[0]: Creation complete after 3s [id=rtb-08dc97e9b829f36bb]
+module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Creating...
+module.vpc_dev.aws_route_table.private[2]: Creation complete after 3s [id=rtb-00c52f0ed2854ab62]
+module.vpc_dev.aws_subnet.database[2]: Creating...
+module.vpc_dev.aws_subnet.private[1]: Creation complete after 4s [id=subnet-037fb36ae0b8c38a3]
+module.vpc_dev.aws_subnet.database[1]: Creation complete after 4s [id=subnet-059b142cde11c2251]
+module.vpc_dev.aws_subnet.private[0]: Creation complete after 4s [id=subnet-0c3dca01bcb570f97]
+module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Creating...
+module.vpc_dev.aws_subnet.public[0]: Creating...
+module.vpc_dev.aws_subnet.public[1]: Creating...
+module.vpc_dev.aws_subnet.database[0]: Creation complete after 4s [id=subnet-0569b2aea636b0ecb]
+module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Creating...
+module.vpc_dev.aws_internet_gateway.this[0]: Creation complete after 4s [id=igw-0954a9c4fc0843f79]
+module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Creating...
+module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Creation complete after 2s [id=eigw-009b7427372ed44de]
+module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Creating...
+module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Creation complete after 1s [id=dopt-0303c1dec0b9fc27e-vpc-03be23a10646bd9a5]
+module.vpc_dev.aws_route.public_internet_gateway[0]: Creating...
+module.vpc_dev.aws_subnet.private[2]: Creation complete after 4s [id=subnet-00e373355ba1602bf]
+module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Creating...
+module.vpc_dev.aws_subnet.database[2]: Creation complete after 3s [id=subnet-09146b82c1a953a92]
+module.vpc_dev.aws_route.private_ipv6_egress[2]: Creating...
+module.vpc_dev.aws_subnet.public[2]: Creation complete after 5s [id=subnet-0a2d44621af2d045d]
+module.vpc_dev.aws_route.private_ipv6_egress[1]: Creating...
+module.vpc_dev.aws_route.public_internet_gateway[0]: Creation complete after 2s [id=r-rtb-08dc97e9b829f36bb1080289494]
+module.vpc_dev.aws_route.private_ipv6_egress[0]: Creating...
+module.vpc_dev.aws_subnet.public[0]: Creation complete after 4s [id=subnet-04b55e5c937515898]
+module.vpc_dev.aws_route_table_association.private[2]: Creating...
+module.vpc_dev.aws_subnet.public[1]: Creation complete after 4s [id=subnet-02ffb013966242f48]
+module.vpc_dev.aws_route_table_association.private[1]: Creating...
+module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Creation complete after 2s [id=r-rtb-08dc97e9b829f36bb2750132062]
+module.vpc_dev.aws_route.private_ipv6_egress[2]: Creation complete after 2s [id=r-rtb-00c52f0ed2854ab622750132062]
+module.vpc_dev.aws_route_table_association.database[2]: Creating...
+module.vpc_dev.aws_route_table_association.private[0]: Creating...
+module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Creation complete after 5s [id=sg-01ec22237965acd7f]
+module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Creation complete after 5s [id=sg-086c2f084978456f3]
+module.vpc_dev.aws_route_table_association.database[1]: Creating...
+module.vpc_dev.aws_route_table_association.database[0]: Creating...
+module.vpc_dev.aws_route_table_association.private[2]: Creation complete after 1s [id=rtbassoc-0bc613f3ddfe284b2]
+module.vpc_dev.aws_route.private_ipv6_egress[1]: Creation complete after 2s [id=r-rtb-0509095b1c1e835172750132062]
+module.vpc_dev.aws_route_table_association.public[0]: Creating...
+module.vpc_dev.aws_route_table_association.public[2]: Creating...
+module.vpc_dev.aws_route_table_association.private[1]: Creation complete after 1s [id=rtbassoc-01f741f5613611a0d]
+module.vpc_dev.aws_route_table_association.public[1]: Creating...
+module.vpc_dev.aws_route_table_association.private[0]: Creation complete after 1s [id=rtbassoc-044c20b437a042193]
+module.vpc_dev.aws_route_table_association.database[2]: Creation complete after 1s [id=rtbassoc-058005031dfb9c044]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Creating...
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Creating...
+module.vpc_dev.aws_route.private_ipv6_egress[0]: Creation complete after 2s [id=r-rtb-05ffec8966cbaffcd2750132062]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Creating...
+module.vpc_dev.aws_route_table_association.database[0]: Creation complete after 1s [id=rtbassoc-0840e6850bfa5b2f5]
+module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Creating...
+module.vpc_dev.aws_route_table_association.database[1]: Creation complete after 1s [id=rtbassoc-0c5222a1c212e3e36]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Creating...
+module.vpc_dev.aws_route_table_association.public[2]: Creation complete after 1s [id=rtbassoc-0bc318107da626a01]
+module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Creating...
+module.vpc_dev.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-0e16b00b1d5f05c0c]
+module.vpc_dev.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-0e096122f2effdabb]
+module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Creating...
+module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Creation complete after 5s [id=sg-0e67371b370328f5b]
+aws_route53_zone.public-zone: Still creating... [20s elapsed]
+module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Creating...
+module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Creating...
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Creation complete after 2s [id=sgrule-3486056792]
+module.dev-ec2-bastion.aws_instance.this[0]: Creating...
+module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Creation complete after 2s [id=sgrule-4024825567]
+module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Creation complete after 2s [id=sgrule-3869248690]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Creation complete after 4s [id=sgrule-344356267]
+module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Creation complete after 4s [id=sgrule-884063906]
+module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Creation complete after 4s [id=sgrule-1980634278]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Creation complete after 6s [id=sgrule-1033354731]
+module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Creation complete after 7s [id=sgrule-2351752626]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Creation complete after 9s [id=sgrule-2872495831]
+aws_route53_zone.public-zone: Still creating... [30s elapsed]
+module.dev-ec2-bastion.aws_instance.this[0]: Still creating... [10s elapsed]
+aws_route53_zone.public-zone: Creation complete after 34s [id=Z0974811ANA23TP83HGF]
+module.dev-ec2-bastion.aws_instance.this[0]: Creation complete after 19s [id=i-0baccb445ce016d7f]
+aws_eip.dev-ec2-bastion-eip: Creating...
+aws_eip.dev-ec2-bastion-eip: Creation complete after 3s [id=eipalloc-0318ebd03092702a2]
+aws_route53_record.dev-bastion-a-record: Creating...
+aws_route53_record.dev-bastion-a-record: Still creating... [10s elapsed]
+aws_route53_record.dev-bastion-a-record: Still creating... [20s elapsed]
+aws_route53_record.dev-bastion-a-record: Still creating... [30s elapsed]
+aws_route53_record.dev-bastion-a-record: Creation complete after 35s [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A]
+
+Apply complete! Resources: 49 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+dev-ec2-bastion-public_dns = [
+  &quot;ec2-34-252-208-5.eu-west-1.compute.amazonaws.com&quot;,
+]
+dev-ec2-bastion-public_ip = &quot;54.220.236.92&quot;
+</code></pre>
+<p>Once this is done, we need to update the nameservers for the domain. It might take a little time for the domain name to resolve. Once it is successful, you might find similar output.</p>
+<pre><code>$ nslookup bastion.vamshi.cf
+Server:         192.168.0.1
+Address:        192.168.0.1#53
+
+Non-authoritative answer:
+Name:   bastion.vamshi.cf
+Address: 54.220.236.92
+</code></pre>
+<p>You can now ssh into the newly created instance using the below command.</p>
+<pre><code>$ ssh -F &quot;./ssh/web.ssh.config&quot; ubuntu@172.16.10.120
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Jan 26 12:28:15 UTC 2021
+
+  System load:  0.08              Processes:           96
+  Usage of /:   14.0% of 7.69GB   Users logged in:     0
+  Memory usage: 18%               IP address for ens5: 172.16.10.120
+  Swap usage:   0%
+
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+To run a command as administrator (user &quot;root&quot;), use &quot;sudo &lt;command&gt;&quot;.
+See &quot;man sudo_root&quot; for details.
+
+ubuntu@ip-172-16-10-120:~$ 
+</code></pre>
+<p>With this, you have now completed the Dynamic Inventory configuration. </p>
+<h3 id="demolition">Demolition</h3>
+<ul>
+<li>Execute the below to destroy the newly created resources in aws once you are done using this to avoid unnecessary billing.</li>
+</ul>
+<pre><code>$ ./run.sh destroy -auto-approve
+module.vpc_dev.aws_route_table_association.database[1]: Destroying... [id=rtbassoc-0c5222a1c212e3e36]
+module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-884063906]
+module.vpc_dev.aws_route_table_association.private[0]: Destroying... [id=rtbassoc-044c20b437a042193]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Destroying... [id=sgrule-1033354731]
+module.vpc_dev.aws_route.private_ipv6_egress[1]: Destroying... [id=r-rtb-0509095b1c1e835172750132062]
+module.vpc_dev.aws_route_table_association.database[0]: Destroying... [id=rtbassoc-0840e6850bfa5b2f5]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-2872495831]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Destroying... [id=sgrule-3486056792]
+module.vpc_dev.aws_route.private_ipv6_egress[2]: Destroying... [id=r-rtb-00c52f0ed2854ab622750132062]
+module.vpc_dev.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-08dc97e9b829f36bb1080289494]
+module.vpc_dev.aws_route.private_ipv6_egress[2]: Destruction complete after 1s
+module.vpc_dev.aws_route.private_ipv6_egress[1]: Destruction complete after 1s
+module.vpc_dev.aws_route.public_internet_gateway[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.database[2]: Destroying... [id=rtbassoc-058005031dfb9c044]
+module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Destroying... [id=dopt-0303c1dec0b9fc27e-vpc-03be23a10646bd9a5]
+module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Destroying... [id=sgrule-1980634278]
+module.vpc_dev.aws_route_table_association.database[1]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.database[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.private[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-0e096122f2effdabb]
+module.vpc_dev.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-0e16b00b1d5f05c0c]
+module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-2351752626]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[1]: Destruction complete after 2s
+module.cmn-sg-ssh-private.aws_security_group_rule.ingress_rules[0]: Destruction complete after 2s
+module.vpc_dev.aws_route.private_ipv6_egress[0]: Destroying... [id=r-rtb-05ffec8966cbaffcd2750132062]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Destroying... [id=sgrule-344356267]
+module.vpc_dev.aws_route_table_association.database[2]: Destruction complete after 1s
+module.vpc_dev.aws_vpc_dhcp_options_association.this[0]: Destruction complete after 1s
+module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-4024825567]
+aws_route53_record.dev-bastion-a-record: Destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A]
+module.vpc_dev.aws_route_table_association.public[1]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.public[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.private[2]: Destroying... [id=rtbassoc-0bc613f3ddfe284b2]
+module.vpc_dev.aws_route_table_association.private[1]: Destroying... [id=rtbassoc-01f741f5613611a0d]
+module.vpc_dev.aws_route.private_ipv6_egress[0]: Destruction complete after 0s
+module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Destroying... [id=r-rtb-08dc97e9b829f36bb2750132062]
+module.cmn-sg-ssh-public.aws_security_group_rule.ingress_rules[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table_association.public[2]: Destroying... [id=rtbassoc-0bc318107da626a01]
+module.vpc_dev.aws_route_table_association.private[2]: Destruction complete after 1s
+module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Destroying... [id=sgrule-3869248690]
+module.vpc_dev.aws_route_table_association.private[1]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.database[0]: Destroying... [id=subnet-0569b2aea636b0ecb]
+module.vpc_dev.aws_route.public_internet_gateway_ipv6[0]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.database[1]: Destroying... [id=subnet-059b142cde11c2251]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[0]: Destruction complete after 3s
+module.cmn-sg-ssh-private.aws_security_group_rule.egress_rules[0]: Destruction complete after 1s
+module.vpc_dev.aws_vpc_dhcp_options.this[0]: Destroying... [id=dopt-0303c1dec0b9fc27e]
+module.vpc_dev.aws_subnet.database[2]: Destroying... [id=subnet-09146b82c1a953a92]
+module.vpc_dev.aws_route_table_association.public[2]: Destruction complete after 1s
+module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Destroying... [id=eigw-009b7427372ed44de]
+module.vpc_dev.aws_vpc_dhcp_options.this[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table.private[2]: Destroying... [id=rtb-00c52f0ed2854ab62]
+module.vpc_dev.aws_egress_only_internet_gateway.this[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table.private[1]: Destroying... [id=rtb-0509095b1c1e83517]
+module.cmn-sg-ssh-public.aws_security_group_rule.egress_rules[0]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.database[0]: Destruction complete after 1s
+module.vpc_dev.aws_route_table.private[0]: Destroying... [id=rtb-05ffec8966cbaffcd]
+module.vpc_dev.aws_subnet.private[2]: Destroying... [id=subnet-00e373355ba1602bf]
+module.vpc_dev.aws_subnet.database[1]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.private[0]: Destroying... [id=subnet-0c3dca01bcb570f97]
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[3]: Destruction complete after 5s
+module.vpc_dev.aws_subnet.private[1]: Destroying... [id=subnet-037fb36ae0b8c38a3]
+module.vpc_dev.aws_subnet.database[2]: Destruction complete after 2s
+module.vpc_dev.aws_internet_gateway.this[0]: Destroying... [id=igw-0954a9c4fc0843f79]
+module.vpc_dev.aws_subnet.private[2]: Destruction complete after 2s
+module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-086c2f084978456f3]
+module.vpc_dev.aws_route_table.private[2]: Destruction complete after 2s
+module.vpc_dev.aws_route_table.public[0]: Destroying... [id=rtb-08dc97e9b829f36bb]
+module.vpc_dev.aws_route_table.private[1]: Destruction complete after 2s
+module.vpc_dev.aws_subnet.private[0]: Destruction complete after 2s
+module.vpc_dev.aws_route_table.private[0]: Destruction complete after 2s
+module.cmn-sg-http.aws_security_group_rule.egress_rules[0]: Destruction complete after 5s
+module.vpc_dev.aws_subnet.private[1]: Destruction complete after 1s
+module.cmn-sg-ssh-private.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
+module.cmn-sg-http.aws_security_group_rule.ingress_rules[2]: Destruction complete after 6s
+module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-01ec22237965acd7f]
+module.vpc_dev.aws_route_table.public[0]: Destruction complete after 2s
+module.cmn-sg-http.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
+aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 10s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 10s elapsed]
+aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 20s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 20s elapsed]
+aws_route53_record.dev-bastion-a-record: Still destroying... [id=Z0974811ANA23TP83HGF_bastion.vamshi.cf_A, 30s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 30s elapsed]
+aws_route53_record.dev-bastion-a-record: Destruction complete after 34s
+aws_route53_zone.public-zone: Destroying... [id=Z0974811ANA23TP83HGF]
+aws_eip.dev-ec2-bastion-eip: Destroying... [id=eipalloc-0318ebd03092702a2]
+aws_route53_zone.public-zone: Destruction complete after 1s
+aws_eip.dev-ec2-bastion-eip: Destruction complete after 3s
+module.dev-ec2-bastion.aws_instance.this[0]: Destroying... [id=i-0baccb445ce016d7f]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 40s elapsed]
+module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 10s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 50s elapsed]
+module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 20s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Still destroying... [id=igw-0954a9c4fc0843f79, 1m0s elapsed]
+module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 30s elapsed]
+module.vpc_dev.aws_internet_gateway.this[0]: Destruction complete after 1m6s
+module.dev-ec2-bastion.aws_instance.this[0]: Still destroying... [id=i-0baccb445ce016d7f, 40s elapsed]
+module.dev-ec2-bastion.aws_instance.this[0]: Destruction complete after 44s
+aws_key_pair.dev-key: Destroying... [id=dev-env-key]
+module.vpc_dev.aws_subnet.public[1]: Destroying... [id=subnet-02ffb013966242f48]
+module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Destroying... [id=sg-0e67371b370328f5b]
+module.vpc_dev.aws_subnet.public[0]: Destroying... [id=subnet-04b55e5c937515898]
+module.vpc_dev.aws_subnet.public[2]: Destroying... [id=subnet-0a2d44621af2d045d]
+aws_key_pair.dev-key: Destruction complete after 0s
+module.vpc_dev.aws_subnet.public[2]: Destruction complete after 1s
+module.cmn-sg-ssh-public.aws_security_group.this_name_prefix[0]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.public[1]: Destruction complete after 1s
+module.vpc_dev.aws_subnet.public[0]: Destruction complete after 1s
+module.vpc_dev.aws_vpc.this[0]: Destroying... [id=vpc-03be23a10646bd9a5]
+module.vpc_dev.aws_vpc.this[0]: Destruction complete after 1s
+
+Destroy complete! Resources: 49 destroyed.
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            This project is maintained by Vamshi Siddarth Gaddam
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

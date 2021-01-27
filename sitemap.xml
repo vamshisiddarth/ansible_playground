@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://vamshisiddarth.github.io/ansible_playground/</loc>
-     <lastmod>2021-01-26</lastmod>
+     <lastmod>2021-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://vamshisiddarth.github.io/ansible_playground/Quick-Start/</loc>
-     <lastmod>2021-01-26</lastmod>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/base-role/</loc>
+     <lastmod>2021-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://vamshisiddarth.github.io/ansible_playground/demolition/</loc>
-     <lastmod>2021-01-26</lastmod>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/Container/docker/</loc>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/ci/jenkins/</loc>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/monitoring/prometheus/</loc>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/monitoring/grafana/</loc>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/monitoring/alertmanager/</loc>
+     <lastmod>2021-01-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://vamshisiddarth.github.io/ansible_playground/monitoring/blackbox-exporter/</loc>
+     <lastmod>2021-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

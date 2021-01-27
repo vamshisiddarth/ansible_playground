@@ -1,0 +1,11 @@
+---
+## Copy keys files and configuration
+- name: transfer ssh config /etc/ssh/ssh_config
+  template:
+    src: keys/ssh_config
+    dest: /etc/ssh/ssh_config
+    owner: root
+  tags:
+    - ssh-config
+    - ssh-keys
+    - keys-deploy

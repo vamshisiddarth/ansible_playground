@@ -1,0 +1,10 @@
+- name: dev bastion
+  hosts: tag_project_dev_bastion
+  remote_user: ubuntu
+  become: true
+  roles:
+    - { role: base,           tags: [ 'base'           ] }
+    - { role: monit,          tags: [ 'monit'          ] }
+    - { role: beats,          tags: [ 'beats'          ] }
+    - { role: docker,         tags: [ 'docker'         ] }
+    - { role: docker-compose, tags: [ 'docker-compose' ] }

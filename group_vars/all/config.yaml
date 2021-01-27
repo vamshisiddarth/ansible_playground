@@ -10,3 +10,12 @@ idx: "{{ hostvars[inventory_hostname].tags.Name.split('-') | last | int | defaul
 ecname: "{{ hostvars[inventory_hostname].tags.name }}"
 ecnameidx: "{{ '-'.join((ecname, idx)) }}"
 
+# https://www.elastic.co/downloads/beats/filebeat
+filebeat_version : "7.10.1"
+filebeat_deb_url : "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{{ filebeat_version }}-amd64.deb"
+filebeat_rpm_url : "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{{ filebeat_version }}-x86_64.rpm"
+
+# https://www.elastic.co/downloads/beats/metricbeat
+metricbeat_version : "7.10.1"
+metricbeat_deb_url : "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-{{ metricbeat_version }}-amd64.deb"
+metricbeat_rpm_url : "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-{{ metricbeat_version }}-x86_64.rpm"

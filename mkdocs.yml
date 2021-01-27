@@ -9,7 +9,13 @@ site_author: Vamshi Siddarth Gaddam
 # Theme Configuration for the Github Pages
 theme:
   name: material
-  #  custom_dir: mkdocs-material/material
+  palette:
+    primary: teal
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
 
   # 404 page
   static_templates:
@@ -27,11 +33,82 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: logo
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/vamshisiddarth
+    - icon: fontawesome/brands/github
+      link: https://github.com/vamshisiddarth
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/vamshi-siddarth-g-7408a718/
+    - icon: fontawesome/brands/medium
+      link: https://vamshisiddarth.medium.com
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 nav:
-  - Home: 'index.md'
-  - 'Quick Start Guide': 'Quick-Start.md'
-  - 'Destroy Resources': 'demolition.md'
+  - Home:
+      - Introduction: index.md
+      - Quick Start Guide: Quick-Start.md
+      - Base Role: base-role.md
+      - Destroy Resources: demolition.md
+  - 'Containers':
+      - 'Docker': 'Container/docker.md'
+  - CI:
+      - 'Jenkins': 'ci/jenkins.md'
+  - Monitoring:
+      - 'Prometheus Stack':
+          - 'Prometheus': 'monitoring/prometheus.md'
+          - 'Grafana': 'monitoring/grafana.md'
+          - 'Alert Manager': 'monitoring/alertmanager.md'
+          - 'Balckbox Exporter': 'monitoring/blackbox-exporter.md'
+  - Logging:
+      - 'Elastic Stack':
+          - 'ElasticSearch': 'logging/elasticsearch.md'
+          - 'Log Stash': 'logging/logstash.md'
+          - 'Kibana': 'logging/kibana.md'
+          - 'Beats':
+              - 'FileBeat': 'logging/filebeat.md'
+              - 'JournalBeat': 'logging/journalbeat.md'
+              - 'MetricBeat': 'logging/metricbeat.md'
 
 google_analytics:
   - G-YQJ1M18N29

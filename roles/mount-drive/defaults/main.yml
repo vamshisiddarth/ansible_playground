@@ -1,0 +1,5 @@
+---
+mount_fs: ext4
+mount_path: /data
+nvme_device_path: /dev/nvme1n1
+xvdh_device_path: /dev/xvdh

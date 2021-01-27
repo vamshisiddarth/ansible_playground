@@ -1,0 +1,59 @@
+---
+## Mount drive
+- name: ensure xfsprogs installed
+  apt:
+    name: xfsprogs
+    state: latest
+  when: mount_fs is defined and mount_fs == 'xfs'
+  tags:
+    - mount-drive
+
+- name: check if drive is fromatted for xvdh
+  shell: "file -s {{ xvdh_device_path }}"
+  ignore_errors: true
+  changed_when: "False"
+  register: xvdh_file_sys
+  tags:
+    - mount-drive
+
+- set_fact:
+    xvdh_file_sys_fact: "{{ xvdh_file_sys.stdout }}"
+  tags:
+    - mount-drive
+
+- name: display output for xvdh
+  debug:
+    var: xvdh_file_sys_fact
+  tags:
+    - mount-drive
+
+- name: import task xvdh mount
+  import_tasks: xvdh.yml
+  when: "': data' in xvdh_file_sys_fact"
+  tags:
+    - mount-drive
+
+- name: check if drive is fromatted for nvme
+  shell: "file -s {{ nvme_device_path }}"
+  ignore_errors: true
+  changed_when: "False"
+  register: nvme_file_sys
+  tags:
+    - mount-drive
+
+- set_fact:
+    nvme_file_sys_fact: "{{ nvme_file_sys.stdout }}"
+  tags:
+    - mount-drive
+
+- name: display output for nvme
+  debug:
+    var: nvme_file_sys_fact
+  tags:
+    - mount-drive
+
+- name: import task nvme mount
+  import_tasks: nvme.yml
+  when: "': data' in nvme_file_sys_fact"
+  tags:
+    - mount-drive

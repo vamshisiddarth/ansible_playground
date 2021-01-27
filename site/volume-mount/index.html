@@ -13,14 +13,14 @@
         <meta name="author" content="Vamshi Siddarth Gaddam">
       
       
-        <link rel="canonical" href="https://vamshisiddarth.github.io/ansible_playground/demolition/">
+        <link rel="canonical" href="https://vamshisiddarth.github.io/ansible_playground/volume-mount/">
       
       <link rel="shortcut icon" href="../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>Destroy Resources - Ansible Playground</title>
+        <title>Volume Mount - Ansible Playground</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#bastion-playbook" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +104,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Destroy Resources
+              Volume Mount
             
           </span>
         </div>
@@ -374,19 +379,6 @@
           
 
 
-
-  <li class="md-nav__item">
-    <a href="../volume-mount/" class="md-nav__link">
-      Volume Mount
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   
 
 
@@ -395,10 +387,57 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Volume Mount
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
-      Destroy Resources
+      Volume Mount
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bastion-playbook" class="md-nav__link">
+    Bastion Playbook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    Execution
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../demolition/" class="md-nav__link">
+      Destroy Resources
+    </a>
   </li>
 
         
@@ -773,21 +812,74 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bastion-playbook" class="md-nav__link">
+    Bastion Playbook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    Execution
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/vamshisiddarth/ansible_playground/edit/master/docs/demolition.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/vamshisiddarth/ansible_playground/edit/master/docs/volume-mount.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Destroy Resources</h1>
+                  <h1>Volume Mount</h1>
                 
-                <p>Execute the below to destroy the newly created resources in aws once you are done using this to avoid unnecessary billing.</p>
-<div class="highlight"><pre><span></span><code>$ ./run.sh destroy -auto-approve
+                <p>We will now mount the volume which is attached to the ec2 instance. The device name will differ depending on the type of the instance you choose. We have <code>nvme1n1</code> and <code>xvdh</code> types configured here.</p>
+<h3 id="bastion-playbook">Bastion Playbook<a class="headerlink" href="#bastion-playbook" title="Permanent link">&para;</a></h3>
+<p>Now, let's add the volume-mount role to the playbook which will look like below.</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev bastion</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tag_project_dev_bastion</span>
+  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+  <span class="nt">become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">roles</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt"> role</span><span class="p">:</span> <span class="nv">base</span><span class="p p-Indicator">,</span><span class="nt">           tags</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;base&#39;</span>       <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt"> role</span><span class="p">:</span> <span class="nv">monit</span><span class="p p-Indicator">,</span><span class="nt">          tags</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;monit&#39;</span>      <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span><span class="nt"> role</span><span class="p">:</span> <span class="nv">mount-drive</span><span class="p p-Indicator">,</span><span class="nt">    tags</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;mount-drive&#39;</span><span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
 </code></pre></div>
+<h3 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">&para;</a></h3>
+<p>To execute the playbook, run the below command.</p>
+<div class="highlight"><pre><span></span><code>$ ansible-playbook dev-bastion.yml --tags<span class="o">=</span>mount-drive
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Check the output and verify there are no errors that is interrupting the playbook from executing all the tasks. Fix all the errors when found.</p>
+</div>
                 
               
               
@@ -806,7 +898,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../volume-mount/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../base-role/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -815,19 +907,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Volume Mount
+                Base Role
               </div>
             </div>
           </a>
         
         
-          <a href="../Container/docker/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../demolition/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Docker
+                Destroy Resources
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

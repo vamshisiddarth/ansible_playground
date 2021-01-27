@@ -89,6 +89,7 @@ nav:
       - Introduction: index.md
       - Quick Start Guide: Quick-Start.md
       - Base Role: base-role.md
+      - Volume Mount: volume-mount.md
       - Destroy Resources: demolition.md
   - 'Containers':
       - 'Docker': 'Container/docker.md'
@@ -98,7 +99,7 @@ nav:
       - 'Prometheus Stack':
           - 'Prometheus': 'monitoring/prometheus.md'
           - 'Grafana': 'monitoring/grafana.md'
-          - 'Alert Manager': 'monitoring/alertmanager.md'
+          - 'Alert Manager': 'monitoring/elasticsearch.md'
           - 'Balckbox Exporter': 'monitoring/blackbox-exporter.md'
   - Logging:
       - 'Elastic Stack':
@@ -106,9 +107,9 @@ nav:
           - 'Log Stash': 'logging/logstash.md'
           - 'Kibana': 'logging/kibana.md'
           - 'Beats':
-              - 'FileBeat': 'logging/filebeat.md'
-              - 'JournalBeat': 'logging/journalbeat.md'
-              - 'MetricBeat': 'logging/metricbeat.md'
+              - 'FileBeat': 'logging/beats/filebeat.md'
+              - 'JournalBeat': 'logging/beats/journalbeat.md'
+              - 'MetricBeat': 'logging/beats/metricbeat.md'
 
 google_analytics:
   - G-YQJ1M18N29

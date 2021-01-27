@@ -1,0 +1,32 @@
+---
+- name: mkfs
+  shell: "mkfs -t {{ mount_fs }} {{ xvdh_device_path }}"
+  tags:
+    - mount-drive
+
+- name: create mount point
+  file:
+    path: "{{mount_path}}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0777
+    recurse: yes
+  changed_when: "False"
+  tags:
+    - mount-drive
+
+- name: mount
+  mount:
+    name: "{{ mount_path }}"
+    src: "{{ xvdh_device_path }}"
+    fstype: "{{ mount_fs }}"
+    opts: "defaults,nofail,discard,noatime"
+    state: mounted
+  tags:
+    - mount-drive
+
+- name: refresh and gather facts
+  setup:
+  tags:
+    - gather_facts
